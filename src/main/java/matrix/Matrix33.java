@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Matrix33 extends AbstractSquareMatrix<Matrix33> {
 
-  public Matrix33(double[] values) {
+  private Matrix33(double[] values) {
     if (values == null || values.length != numRows() * numColumns()) {
       throw new IllegalArgumentException();
     }
@@ -16,9 +16,8 @@ public class Matrix33 extends AbstractSquareMatrix<Matrix33> {
     return new Matrix33(values);
   }
 
-  @Override
-  public float determinant() {
-    return 0;
+  public static Matrix33 of(double... values) {
+    return new Matrix33(values);
   }
 
   @Override
@@ -38,20 +37,21 @@ public class Matrix33 extends AbstractSquareMatrix<Matrix33> {
 
   @Override
   public Matrix33 transpose() {
-    double[] values = new double[9];
-
-    for (int i = 0; i < values.length; i++) {
-      int row = i / numRows();
-      int col = i % numRows();
-      int index = (numColumns() * col) + row;
-      values[index] = this.values[i];
-    }
-
-    return new Matrix33(values);
+    return new Matrix33(transposeValues());
   }
 
   @Override
-  public Matrix33 scale(float scalar) {
+  public Matrix33 scale(double scalar) {
     return new Matrix33(mapValues(val -> scalar * val));
+  }
+
+  @Override
+  public Matrix33 add(Matrix33 rhs) {
+    return new Matrix33(addValues(rhs.values));
+  }
+
+  @Override
+  public Matrix33 multiply(Matrix rhs) {
+    return new Matrix33(multiplyInternal(rhs));
   }
 }

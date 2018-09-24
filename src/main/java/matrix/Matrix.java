@@ -8,5 +8,12 @@ public interface Matrix<T extends Matrix<T>> {
 
   Matrix transpose();
 
-  T scale(float scalar);
+  T scale(double scalar);
+
+  T add(T rhs);
+
+  Matrix multiply(Matrix rhs);
+
+  double[] values();
+
 }
