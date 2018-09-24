@@ -51,7 +51,7 @@ abstract class AbstractMatrix<T extends Matrix<T>> implements Matrix<T> {
     for (int m = 0; m < numRows(); m++) {
       for (int k = 0; k < rhs.numColumns(); k++) {
         for (int n = 0; n < numColumns(); n++) {
-          result[index] += values[m*numColumns()+n] * tmp[k*rhs.numRows()+n];
+          result[index] += values[m * numColumns() + n] * tmp[k * rhs.numRows() + n];
         }
         index++;
       }

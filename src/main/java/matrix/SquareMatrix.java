@@ -8,5 +8,4 @@ public interface SquareMatrix<T extends SquareMatrix<T>> extends Matrix<T> {
 
   @Override
   T transpose();
-
 }

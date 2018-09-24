@@ -30,18 +30,19 @@ public class Matrix33Test {
   public void determinant() {
     System.out.println(Matrix33.identity().determinant());
 
-    System.out.println(Matrix33.of(1,2,3,2,1,2,3,2,1).determinant());
+    System.out.println(Matrix33.of(1, 2, 3, 2, 1, 2, 3, 2, 1).determinant());
   }
 
   @Test
   public void add() {
-    System.out.println(Matrix33.identity().add(Matrix33.of(2,2,2,2,2,2,2,2,2)));
-    System.out.println(Matrix33.identity().add(Matrix33.of(2,2,2,2,2,2,2,2,2)).scale(-1));
-    System.out.println(Matrix33.identity().add(Matrix33.of(2,2,2,2,2,2,2,2,2).scale(-1)));
+    System.out.println(Matrix33.identity().add(Matrix33.of(2, 2, 2, 2, 2, 2, 2, 2, 2)));
+    System.out.println(Matrix33.identity().add(Matrix33.of(2, 2, 2, 2, 2, 2, 2, 2, 2)).scale(-1));
+    System.out.println(Matrix33.identity().add(Matrix33.of(2, 2, 2, 2, 2, 2, 2, 2, 2).scale(-1)));
   }
 
   @Test
   public void multiply() {
-    System.out.println(Matrix33.of(1,2,3,4,5,6,7,8,9).multiply(Matrix33.of(1,1,1,1,1,1,1,1,1)));
+    System.out.println(
+      Matrix33.of(1, 2, 3, 4, 5, 6, 7, 8, 9).multiply(Matrix33.of(1, 1, 1, 1, 1, 1, 1, 1, 1)));
   }
 }

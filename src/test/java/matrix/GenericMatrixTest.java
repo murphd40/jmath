@@ -6,8 +6,8 @@ public class GenericMatrixTest {
 
   @Test
   public void multiply() {
-    GenericMatrix A = new GenericMatrix(new double[]{1,2,3,4,5,6}, 3, 2);
-    GenericMatrix B = new GenericMatrix(new double[]{1,2,3,4,5,6,7,8}, 2, 4);
+    GenericMatrix A = new GenericMatrix(new double[]{1, 2, 3, 4, 5, 6}, 3, 2);
+    GenericMatrix B = new GenericMatrix(new double[]{1, 2, 3, 4, 5, 6, 7, 8}, 2, 4);
 
     Matrix C = A.multiply(B);
 
@@ -17,5 +17,4 @@ public class GenericMatrixTest {
 
     // todo - fix transpose, it doesn't work
   }
-
 }

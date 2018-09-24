@@ -15,5 +15,4 @@ public interface Matrix<T extends Matrix<T>> {
   Matrix multiply(Matrix rhs);
 
   double[] values();
-
 }

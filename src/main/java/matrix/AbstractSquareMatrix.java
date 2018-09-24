@@ -16,14 +16,14 @@ abstract class AbstractSquareMatrix<T extends SquareMatrix<T>> extends AbstractM
     double det = 0;
 
     for (int r = 0; r < numRows; r++) {
-      det += sign(r) * values[r] * determinant(numRows-1, minor(numRows, r, values));
+      det += sign(r) * values[r] * determinant(numRows - 1, minor(numRows, r, values));
     }
 
     return det;
   }
 
   private static double[] minor(int numRows, int row, double[] values) {
-    double[] minor = new double[(numRows-1)*(numRows-1)];
+    double[] minor = new double[(numRows - 1) * (numRows - 1)];
 
     int index = 0;
     for (int i = numRows; i < values.length; i++) {
